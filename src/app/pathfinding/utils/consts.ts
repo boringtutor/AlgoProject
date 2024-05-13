@@ -1,0 +1,13 @@
+export const PATH_FINDING_A_STAR = "A*";
+export const PATH_FINDING_DIJKSTRA = "DIJKSTRA'S ALGORITHM";
+export const PATH_FINDING_DFS = "DEPTH FIRST SEARCH";
+export const PATH_FINDING_BFS = "BREADTH FIRST SEARCH";
+export const PATH_FINDING_DP = "DYNAMIC PROGRAMING";
+
+//GRID DIMENSIONS
+export const GRID_WIDTH = 10;
+export const GRID_HEIGHT = 10;
+
+//GRID NODE SIZE
+export const GRID_NODE_WIDTH = 10;
+export const GRID_NODE_HEIGHT = 10;

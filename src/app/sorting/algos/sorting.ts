@@ -1,3 +1,9 @@
+import {
+  SEARCH_BUBBLE_SORT,
+  SEARCH_MERGE_SORT,
+  SEARCH_RADIX_SORT,
+  SEARCH_SELECTION_SORT,
+} from "../utils/consts";
 import { barNode } from "../utils/types";
 
 type algoName = {
@@ -16,13 +22,13 @@ export class SortingAlgo {
   }
 
   public sorting() {
-    if (this.algorithm === "selection") {
+    if (this.algorithm === SEARCH_SELECTION_SORT) {
       this.selectionSort();
-    } else if (this.algorithm === "bubble") {
+    } else if (this.algorithm === SEARCH_BUBBLE_SORT) {
       this.BubbleSort();
-    } else if (this.algorithm === "merge") {
+    } else if (this.algorithm === SEARCH_MERGE_SORT) {
       this.MergeSort();
-    } else if (this.algorithm === "radix") {
+    } else if (this.algorithm === SEARCH_RADIX_SORT) {
       this.RadixSort();
     }
 

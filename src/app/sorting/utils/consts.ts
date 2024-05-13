@@ -1,3 +1,7 @@
 export const MIN_NUM_BAR_HEIGHT = 10;
 export const MAX_NUM_BAR_HEIGHT = 100;
 export const TOTAL_NUMBER_OF_BARS = 10;
+export const SEARCH_SELECTION_SORT = "SELECTION SORT";
+export const SEARCH_BUBBLE_SORT = "BUBBLE SORT";
+export const SEARCH_MERGE_SORT = "MERGE SORT";
+export const SEARCH_RADIX_SORT = "RADIX SORT";

@@ -2,22 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-  
+/* 
+  my color palaet
+  light theme
+  #fefbfd backgroud
+  #02042d
+  #4b1f97
+  #fe3976
+  #b12819
+  #09466a
+  #2bc1a1
+  #43e4d3
+  #fbcb5d
+  #f7d03c
+  #a0ffe8
+
+  dark theme
+  #5ed7d1 background
+  #1c081a
+  #7d3ba3
+  #279cc4
+  #f2f6f4
+  #b4c878
+  #e19b23
+  #c7a5a7
+  #d5d4da
+  #c59d81
+  #4d8956
+
+*/
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
+    --background: 320 60% 99%;
+    --foreground: 237, 91%, 9%;
+    --card: 262, 66%, 36%;
+    --card-foreground: 341, 99%, 61%;
+    --popover: 6, 75%, 40%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 142.1 76.2% 36.3%;
-    --primary-foreground: 355.7 100% 97.3%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
+    --primary: 202, 84%, 23%;
+    --primary-foreground: 167, 64%, 46%;
+    --secondary: 174, 75%, 58%;
+    --secondary-foreground: 42, 95%, 67%;
+    --muted: 47, 92%, 60%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
+    --accent: 165, 100%, 81%;
+    /* done */
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -28,17 +58,18 @@
   }
 
   .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 0 0% 95%;
-    --card: 24 9.8% 10%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 142.1 70.6% 45.3%;
-    --primary-foreground: 144.9 80.4% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 15%;
+    --background: 177, 60%, 61%;
+    --foreground: 306, 56%, 7%;
+    --card: 278, 47%, 44%;
+    --card-foreground: 195, 67%, 46%;
+    --popover: 150, 18%, 96%;
+    --popover-foreground: 75, 42%, 63%;
+    --primary: 38, 76%, 51%;
+    --primary-foreground: 356, 23%, 71%;
+    --secondary: 250, 7%, 84%;
+    --secondary-foreground: 25, 37%, 64%;
+    --muted: 129, 28%, 42%;
+    /*  */
     --muted-foreground: 240 5% 64.9%;
     --accent: 12 6.5% 15.1%;
     --accent-foreground: 0 0% 98%;
@@ -50,11 +81,11 @@
   }
 }
 
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-    }
+@layer base {
+  * {
+    @apply border-border;
   }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

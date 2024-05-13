@@ -11,26 +11,31 @@ import { initializeArray } from "./utils/utils";
 import {
   MAX_NUM_BAR_HEIGHT,
   MIN_NUM_BAR_HEIGHT,
+  SEARCH_BUBBLE_SORT,
+  SEARCH_MERGE_SORT,
+  SEARCH_RADIX_SORT,
+  SEARCH_SELECTION_SORT,
   TOTAL_NUMBER_OF_BARS,
 } from "./utils/consts";
+import Link from "next/link";
 
 export default function Sorting() {
   const arr = [
     {
       index: 0,
-      algo: "SelectionSort",
+      algo: SEARCH_SELECTION_SORT,
     },
     {
       index: 1,
-      algo: "MergeSort",
+      algo: SEARCH_BUBBLE_SORT,
     },
     {
       index: 2,
-      algo: "QuickSort",
+      algo: SEARCH_MERGE_SORT,
     },
     {
       index: 3,
-      algo: "RadixSort",
+      algo: SEARCH_RADIX_SORT,
     },
   ];
   const [currentAlgo, setCurrentAlgo] = useState<number>(0);
@@ -54,7 +59,9 @@ export default function Sorting() {
     if (!alreadySorted) {
       if (arrayState !== null) {
         setStartingVisualization(true);
-        const sorter = new SortingAlgo(arrayState, { name: "merge" });
+        const sorter = new SortingAlgo(arrayState, {
+          name: arr[currentAlgo].algo,
+        });
         const animationSteps = sorter.sorting();
 
         for (const step of animationSteps) {
@@ -70,7 +77,7 @@ export default function Sorting() {
   const currentState = 1;
   return (
     <div className="flex flex-col w-full h-screen bg-background">
-      <div className="flex w-full h-full bg-primary/75 max-h-10 items-center pl-10">
+      <div className="flex w-full h-full bg-primary text-background max-h-10 items-center pl-10">
         {/* nav bar */}
         <strong>Sorting</strong>
         <MyMenuBar
@@ -85,6 +92,7 @@ export default function Sorting() {
             onClick={() => {
               startSorting();
             }}
+            className="text-background hover:bg-muted"
           >
             Visualize
           </Button>
@@ -101,7 +109,7 @@ export default function Sorting() {
         )}
       </div>
       {alreadySorted ? (
-        <div className="flex w-full bg-red-300 h-10 rounded-md justify-center items-center mx-4 text-accent-foreground">
+        <div className="flex w-full bg-secondary-foreground h-10 rounded-md justify-center items-center mx-4 text-background">
           ALREADY SORTED.... PLEASE CLICK RANDOMIZE ARRAY
         </div>
       ) : (
@@ -133,41 +141,42 @@ function MyMenuBar({ algos, clickHandler, reInitialize }: algo) {
   const [iconCloseState, setIconCloseState] = useState(false);
   // console.log(algos)
   return (
-    <div className="flex space-x-2 items-center  w-full text-foreground justify-around ">
-      <div className="select-none hover:bg-accent p-2 rounded-sm cursor-pointer">
-        Home
+    <div className="flex space-x-2 items-center  w-full text-background justify-around ">
+      <div className="select-none hover:bg-muted p-2 rounded-sm cursor-pointer">
+        <Link href="/">HOME</Link>
       </div>
       <div
-        className="select-none hover:bg-accent p-2 rounded-sm cursor-pointer"
+        className="select-none hover:bg-muted p-2 rounded-sm cursor-pointer"
         onClick={() => {
           reInitialize();
         }}
       >
-        Randomize
+        RANDOMIZE
       </div>
       <div
-        className="flex space-x-2 items-center select-none hover:bg-secondary p-2 rounded-sm cursor-pointer"
+        className="flex space-x-2 items-center select-none hover:bg-muted p-2 rounded-sm cursor-pointer"
         onClick={() => {
           setIconCloseState(!iconCloseState);
         }}
       >
-        Algorithms
+        ALGORITHMS
         {iconCloseState ? (
           <ChevronDownIcon className=" h-3 w-3 flex " aria-hidden="true" />
         ) : (
           <ChevronUpIcon className="h-3 w-3" aria-hidden="true" />
         )}
         {iconCloseState ? (
-          <div className="absolute w-44 rounded-md h-40 bg-secondary top-12 ">
+          <div className="absolute w-44 rounded-md  bg-primary top-12 ">
             <div className="flex flex-col items-center w-full h-full overflow-scroll p-10">
               {algos.map((item) => {
                 return (
                   <div
                     key={item.index}
                     onClick={() => clickHandler(item.index)}
-                    className="hover:bg-primary rounded p-2"
+                    className="hover:bg-muted rounded p-2 text-nowrap"
                   >
                     {item.algo}
+                    <br></br>
                   </div>
                 );
               })}

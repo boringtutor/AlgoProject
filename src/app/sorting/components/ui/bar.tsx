@@ -11,10 +11,10 @@ export default function Bar({ h, color }: BarProps) {
   // console.log(newHeight);
   const c =
     color === "idle"
-      ? "green-200"
+      ? "muted"
       : color === "comparing"
-      ? "red-200"
-      : "blue-200";
+      ? "popover"
+      : "card-foreground";
   //   const c = "green-200";
   return (
     <div className={`flex w-10 bg-${c}`} style={{ height: newHeight }}>
